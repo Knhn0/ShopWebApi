@@ -15,7 +15,10 @@
 
     <ItemGroup>
       <Folder Include="Controllers\" />
-      <Folder Include="Middlewares\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ShopWebApp.Domain\ShopWebApp.Domain.csproj" />
     </ItemGroup>
 
 </Project>
