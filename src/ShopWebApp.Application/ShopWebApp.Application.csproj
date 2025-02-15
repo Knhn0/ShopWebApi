@@ -6,4 +6,17 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ShopWebApp.Domain\ShopWebApp.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+        <HintPath>..\..\..\..\.dotnet\shared\Microsoft.AspNetCore.App\8.0.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      </Reference>
+      <Reference Include="ShopWebApp.Application.Abstractions">
+        <HintPath>..\ShopWebApp.Api\bin\Debug\net8.0\ShopWebApp.Application.Abstractions.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>

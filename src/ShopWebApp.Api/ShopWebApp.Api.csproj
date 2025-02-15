@@ -14,10 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
-    </ItemGroup>
-
-    <ItemGroup>
+      <ProjectReference Include="..\ShopWebApp.Application\ShopWebApp.Application.csproj" />
       <ProjectReference Include="..\ShopWebApp.Domain\ShopWebApp.Domain.csproj" />
     </ItemGroup>
 

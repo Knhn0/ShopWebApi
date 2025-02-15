@@ -29,7 +29,7 @@ namespace ShopWebApp.Domain.Entities
         /// <summary>
         /// Product price
         /// </summary>
-        public string Price { get; set; }
+        public decimal Price { get; set; }
 
         /// <summary>
         /// Product image
