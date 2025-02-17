@@ -26,9 +26,9 @@ public class ProductRepository : IProductRepository
             returning ""Id""
             ";
             
-                    var id = await connection.QueryFirstOrDefaultAsync<Guid>(sql, product);
-                    await connection.CloseAsync();
+        var id = await connection.QueryFirstOrDefaultAsync<Guid>(sql, product);
+        await connection.CloseAsync();
             
-                    return id;
-                }
-            }
+        return id;
+    }
+}
