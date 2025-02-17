@@ -22,7 +22,7 @@ services:
     environment:
       POSTGRES_DB: "shopwebapp"
       POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "1"
+      POSTGRES_PASSWORD: "postgres"
     ports:
       - "5435:5432"
     networks:

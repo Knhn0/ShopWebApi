@@ -6,7 +6,7 @@ namespace ShopWebApp.Application.Products;
 
 public class ProductService (IProductRepository productRepository) : IProductService
 {
-    public async Task<int> Add(Product product)
+    public async Task<Guid> Add(Product product)
     {
         return await productRepository.AddAsync(product);
     }

@@ -21,6 +21,6 @@ public class ProductController(IProductService productService) : ControllerBase
     [HttpPost]
     public async Task<IActionResult> AddCompanyAsync([FromBody] Product product)
     {
-        return Ok(productService.Add(product));
+        return Ok(await productService.Add(product));
     }
 }

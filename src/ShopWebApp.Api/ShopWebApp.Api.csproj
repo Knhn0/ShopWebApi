@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="dbup-postgresql" Version="6.0.0-beta.44" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
     </ItemGroup>
@@ -16,6 +17,7 @@
     <ItemGroup>
       <ProjectReference Include="..\ShopWebApp.Application\ShopWebApp.Application.csproj" />
       <ProjectReference Include="..\ShopWebApp.Domain\ShopWebApp.Domain.csproj" />
+      <ProjectReference Include="..\ShopWebApp.Infrastructure\ShopWebApp.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

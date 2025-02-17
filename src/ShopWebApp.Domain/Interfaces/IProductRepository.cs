@@ -4,5 +4,5 @@ namespace ShopWebApp.Domain.Interfaces;
 
 public interface IProductRepository
 {
-    public Task<int> AddAsync(Product product);
+    public Task<Guid> AddAsync(Product product);
 }

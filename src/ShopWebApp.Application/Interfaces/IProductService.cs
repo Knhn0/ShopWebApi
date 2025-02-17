@@ -4,5 +4,5 @@ namespace ShopWebApp.Application.Interfaces;
 
 public interface IProductService
 {
-    public Task<int> Add(Product product);
+    public Task<Guid> Add(Product product);
 }

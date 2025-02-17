@@ -16,17 +16,19 @@ public class ProductRepository : IProductRepository
     }
 
     
-    public async Task<int> AddAsync(Product product)
+    public async Task<Guid> AddAsync(Product product)
     {
         await using var connection = new NpgsqlConnection(_dbConnection);
-        
-        var sql = @"INSERT INTO ""Products"" (""Name"")
-                    VALUES (@Name)
-                    RETURNING ""Id"";";
 
-        var id = await connection.ExecuteScalarAsync<int>(sql, product);
-        await connection.CloseAsync();
-
-        return id;
-    }
-}
+        var sql =
+            @"insert into ""Products""(""Definition"", ""Name"", ""Price"", ""Image"") 
+            values (@Definition, @Name, @Price, @Image) 
+            returning ""Id""
+            ";
+            
+                    var id = await connection.QueryFirstOrDefaultAsync<Guid>(sql, product);
+                    await connection.CloseAsync();
+            
+                    return id;
+                }
+            }
