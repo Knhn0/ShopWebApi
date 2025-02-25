@@ -16,7 +16,7 @@ public class ProductController(IProductService productService) : ControllerBase
     /// <summary>
     /// Add product
     /// </summary>
-    /// <returns>Id продукта.</returns>
+    /// <returns>product Id</returns>
     [HttpPost]
     public async Task<IActionResult> AddProductAsync([FromBody] Product product)
     {
@@ -26,7 +26,7 @@ public class ProductController(IProductService productService) : ControllerBase
     /// <summary>
     /// Delete product
     /// </summary>
-    /// <returns>Id продукта.</returns>
+    /// <returns>product Id</returns>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteProductAsync(Guid id)
     {
@@ -36,9 +36,9 @@ public class ProductController(IProductService productService) : ControllerBase
     /// <summary>
     /// Update product
     /// </summary>
-    /// <returns>Id продукта.</returns>
+    /// <returns>class Product</returns>
     [HttpPatch("update/{id}")]
-    public async Task<IActionResult> PatchProduct(Guid id, UpdateProductRequest updateProductRequest)
+    public async Task<IActionResult> UpdateProduct(Guid id, UpdateProductRequest updateProductRequest)
     {
         var updatedProduct = await productService.UpdatePartialAsync(id,
             new Product
@@ -55,5 +55,15 @@ public class ProductController(IProductService productService) : ControllerBase
         }
 
         return Ok(updatedProduct);
+    }
+    
+    /// <summary>
+    /// Get product
+    /// </summary>
+    /// <returns>class Product</returns>
+    [HttpGet]
+    public async Task<IActionResult> GetProduct(string productName)
+    {
+        return Ok(await productService.GetByNameAsync(productName));
     }
 }

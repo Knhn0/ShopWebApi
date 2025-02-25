@@ -42,4 +42,9 @@ public class ProductService(IProductRepository productRepository) : IProductServ
 
         return updatedProduct;
     }
+
+    public async Task<Product> GetByNameAsync(string productName)
+    {
+        return await productRepository.GetByNameAsync(productName);
+    }
 }

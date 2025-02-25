@@ -104,4 +104,20 @@ public class ProductRepository : IProductRepository
             }
         }
     }
+
+    public async Task<Product> GetByNameAsync(string productName)
+    {
+        await using (var connection = new NpgsqlConnection(_dbConnection))
+        {
+            connection.Open();
+            using (var transaction = connection.BeginTransaction())
+            {
+                var query = @"select * from ""Products"" where ""Name"" = @Name";
+                var product = await connection.QuerySingleOrDefaultAsync<Product>(query, new {Name = productName});
+                transaction.Commit();
+
+                return product;
+            }
+        }
+    }
 }
