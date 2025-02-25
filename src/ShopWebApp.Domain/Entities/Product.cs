@@ -19,7 +19,7 @@ namespace ShopWebApp.Domain.Entities
         /// <summary>
         /// Product description
         /// </summary>
-        public string Definition { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
         /// Product name

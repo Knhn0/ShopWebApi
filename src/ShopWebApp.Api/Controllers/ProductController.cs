@@ -43,7 +43,7 @@ public class ProductController(IProductService productService) : ControllerBase
         var updatedProduct = await productService.UpdatePartialAsync(id,
             new Product
             {
-                Definition = updateProductRequest.Definition,
+                Description = updateProductRequest.Description,
                 Price = updateProductRequest.Price,
                 Name = updateProductRequest.Name,
                 Image = updateProductRequest.Image

@@ -24,8 +24,8 @@ public class ProductRepository : IProductRepository
 
             using (var transaction = connection.BeginTransaction())
             {
-                var sql = @"insert into ""Products""(""Definition"", ""Name"", ""Price"", ""Image"") 
-                values (@Definition, @Name, @Price, @Image) 
+                var sql = @"insert into ""Products""(""Description"", ""Name"", ""Price"", ""Image"") 
+                values (@Description, @Name, @Price, @Image) 
                 returning ""Id""";
 
                 var id = await connection.QueryFirstOrDefaultAsync<Guid>(sql, product);
@@ -86,7 +86,7 @@ public class ProductRepository : IProductRepository
                 update ""Products""
                 set 
                     ""Name"" = @Name,
-                    ""Definition"" = @Definition,
+                    ""Description"" = @Description,
                     ""Price"" = @Price
                 where ""Id"" = @Id
                 returning *;";
@@ -94,7 +94,7 @@ public class ProductRepository : IProductRepository
                 var updatedProduct = await connection.QueryFirstOrDefaultAsync<Product>(query, new
                 {
                     product.Name,
-                    product.Definition,
+                    product.Description,
                     product.Price,
                     product.Id
                 });

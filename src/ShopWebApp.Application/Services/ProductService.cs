@@ -36,7 +36,7 @@ public class ProductService(IProductRepository productRepository) : IProductServ
             Id = id,
             Name = productForUpdate.Name,
             Price = productForUpdate.Price,
-            Definition = productForUpdate.Definition,
+            Description = productForUpdate.Description,
             Image = productForUpdate.Image
         });
 
