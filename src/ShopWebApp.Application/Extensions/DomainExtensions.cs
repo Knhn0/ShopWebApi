@@ -16,7 +16,6 @@ public static class ServiceExtensions
     /// <returns><see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection AddServices(this IServiceCollection services)
     {
-        return services
-            .AddSingleton<IProductService, ProductService>();
+        return services.AddScoped<IProductService, ProductService>();
     }
 }

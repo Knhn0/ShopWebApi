@@ -17,6 +17,6 @@ public static class DomainExtensions
     public static IServiceCollection AddRepositories(this IServiceCollection services)
     {
         return services
-            .AddScoped<IProductRepository, ProductRepository>();
+            .AddSingleton<IProductRepository, ProductRepository>();
     }
 }
